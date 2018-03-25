@@ -9,7 +9,7 @@ public interface LoginContract {
 
     interface View {
 
-        void showRegistrationScreen();
+        void showSignUpScreen();
 
         void showLoginScreen();
 
@@ -18,12 +18,16 @@ public interface LoginContract {
         void setLoginProgress(boolean progress);
 
         void showError(String message);
+
+        String getLogin();
+
+        String getPassword();
     }
 
     interface Presenter extends BasePresenter<View> {
 
         void loginButtonClick();
 
-        void registerButtonClick();
+        void signUpButtonClick();
     }
 }

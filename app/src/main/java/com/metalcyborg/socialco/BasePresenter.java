@@ -5,7 +5,7 @@ package com.metalcyborg.socialco;
  */
 public interface BasePresenter<V> {
 
-    void onAttach(V view);
+    void attachView(V view);
 
-    void onDetach(V view);
+    void detachView();
 }

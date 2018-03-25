@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.metalcyborg.socialco.splash.SplashContract;
 import com.metalcyborg.socialco.splash.domain.SplashInteractor;
+import com.metalcyborg.socialco.utils.IRxUtils;
 import com.metalcyborg.socialco.utils.RxUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -18,20 +19,20 @@ public class SplashPresenter implements SplashContract.Presenter {
     private static final int DELAY_TIME = 2000;
     private SplashContract.View mView;
     private SplashInteractor mInteractor;
-    private RxUtils mRxUtils;
+    private IRxUtils mRxUtils;
 
-    public SplashPresenter(SplashInteractor interactor, RxUtils rxUtils) {
+    public SplashPresenter(SplashInteractor interactor, IRxUtils rxUtils) {
         mInteractor = interactor;
         mRxUtils = rxUtils;
     }
 
     @Override
-    public void onAttach(SplashContract.View view) {
+    public void attachView(SplashContract.View view) {
         mView = view;
     }
 
     @Override
-    public void onDetach(SplashContract.View view) {
+    public void detachView() {
 
     }
 

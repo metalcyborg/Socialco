@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
 
         SplashInjector.getSplashComponent().inject(this);
 
-        mPresenter.onAttach(this);
+        mPresenter.attachView(this);
         mPresenter.makeLongOperation();
     }
 
